@@ -86,11 +86,11 @@
         }
         
         .glow-purple {
-            box-shadow: 0 0 8px rgba(158, 87, 179, 0.2);
+            box-shadow: 0 0 8px rgba(158, 87, 179, 0.25);
         }
         
         .glow-green {
-            box-shadow: 0 0 8px rgba(26, 251, 111, 0.2);
+            box-shadow: 0 0 8px rgba(26, 251, 111, 0.15);
         }
         
         .glow-blue {
@@ -130,7 +130,7 @@
         
         /* Custom hover effects for cards */
         .card-challenge {
-            box-shadow: 0 0 8px rgba(38, 122, 210, 0.2); /* Blue glowing effect for challenge boxes */
+            /* Base styles for challenge cards */
         }
         
         .card-challenge:hover {
@@ -139,11 +139,10 @@
         
         .card-testimonial {
             transition: all 0.3s ease;
-            box-shadow: 0 0 8px rgba(158, 87, 179, 0.2); /* Purple glow with consistent intensity */
         }
         
         .card-testimonial:hover {
-            box-shadow: 0 0 8px rgba(158, 87, 179, 0.2); /* Consistent intensity */
+            /* Hover effect can be added here if needed */
         }
         
         /* Custom button style */
@@ -408,14 +407,6 @@
                     <span class="gradient-heading">Dev</span>
                 </h1>
             </div>
-            <!-- <nav class="hidden md:block">
-                <ul class="flex space-x-6">
-                    <li><a href="#defis" class="text-gray-300 hover:text-white transition" style="letter-spacing: 0.02em;">Défis</a></li>
-                    <li><a href="#temoignages" class="text-gray-300 hover:text-white transition" style="letter-spacing: 0.02em;">Témoignages</a></li>
-                    <li><a href="#vision" class="text-gray-300 hover:text-white transition" style="letter-spacing: 0.02em;">Vision</a></li>
-                </ul>
-            </nav>
-            <button class="btn-primary text-white px-4 py-2 rounded-md text-sm font-medium" style="letter-spacing: 0.02em;">S'inscrire</button> -->
         </div>
     </header>
 
@@ -467,7 +458,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Challenge 1 -->
-                <div class="rounded-lg p-8 card-challenge" style="background-color: var(--bg-tertiary);">
+                <div class="rounded-lg p-8 card-challenge glow-blue" style="background-color: var(--bg-tertiary);">
                     <div class="h-14 w-14 bg-gray-700 rounded-full flex items-center justify-center mb-6">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-blue);">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -485,7 +476,7 @@
                 </div>
                 
                 <!-- Challenge 2 -->
-                <div class="rounded-lg p-8 card-challenge" style="background-color: var(--bg-tertiary);">
+                <div class="rounded-lg p-8 card-challenge glow-blue" style="background-color: var(--bg-tertiary);">
                     <div class="h-14 w-14 bg-gray-700 rounded-full flex items-center justify-center mb-6">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-blue);">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -503,7 +494,7 @@
                 </div>
                 
                 <!-- Challenge 3 -->
-                <div class="rounded-lg p-8 card-challenge" style="background-color: var(--bg-tertiary);">
+                <div class="rounded-lg p-8 card-challenge glow-blue" style="background-color: var(--bg-tertiary);">
                     <div class="h-14 w-14 bg-gray-700 rounded-full flex items-center justify-center mb-6">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-blue);">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -532,76 +523,73 @@
         </div>
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <p class="section-label" style="color: var(--accent-purple);">Un mouvement de fond</p>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ce que disent les <span style="color: var(--accent-purple); font-weight: bold;">Experts</span></h2>
+                <p class="section-label" style="color: var(--accent-purple);">un mouvement de fond</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4"><span style="color: var(--accent-purple); font-weight: bold;">Prédictions</span> des Techno-Guru</h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Les leaders de l'industrie technologique partagent leur vision sur l'avenir du développement à l'ère de l'IA agentique.
+                    Seuls les développeurs hybrides survivront à la singularité technologique...
                 </p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Testimonial 1 - Microsoft -->
-                <div class="rounded-lg p-8 card-testimonial" style="background-color: var(--bg-tertiary); border: 1px solid #1a1a1a;">
-                    <div class="mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" style="color: rgba(158, 87, 179, 0.3);">
-                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                        </svg>
+                <div class="rounded-lg p-8 card-testimonial glow-purple flex flex-col justify-between h-full" style="border: 1px solid #1a1a1a;">
+                    <div>
+                        <div class="mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" style="color: rgba(158, 87, 179, 0.3);">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                            </svg>
+                        </div>
+                        <p class="text-gray-300 mb-6 italic" style="line-height: 1.7; font-weight: 300; letter-spacing: 0.01em;">
+                            "D'ici cinq ans, 95% du code sera généré par l'IA, mais la créativité humaine et la résolution de problèmes resteront cruciales."
+                        </p>
                     </div>
-                    <p class="text-gray-300 mb-6 italic" style="line-height: 1.7; font-weight: 300; letter-spacing: 0.01em;">
-                        "D'ici cinq ans, 95% du code sera généré par l'IA, mais la créativité humaine et la résolution de problèmes resteront cruciales."
-                    </p>
-                    <div class="flex items-center">
+                    <div class="flex items-end mt-auto">
                         <img src="kevin_scott.jpg" alt="Kevin Scott" class="mr-4 h-12 w-12 rounded-full object-cover">
                         <div>
                             <h4 class="font-semibold">Kevin Scott</h4>
                             <p class="text-gray-400 text-sm">CTO, Microsoft</p>
-                            <!-- <p class="text-sm mt-1" style="color: var(--accent-purple);">
-                                95% du code sera généré par l'IA d'ici 5 ans
-                            </p> -->
                         </div>
                     </div>
                 </div>
                 
                 <!-- Testimonial 2 - Okta -->
-                <div class="rounded-lg p-8 card-testimonial" style="background-color: var(--bg-tertiary); border: 1px solid #1a1a1a;">
-                    <div class="mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" style="color: rgba(158, 87, 179, 0.3);">
-                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                        </svg>
+                <div class="rounded-lg p-8 card-testimonial glow-purple flex flex-col justify-between h-full" style="border: 1px solid #1a1a1a;">
+                    <div>
+                        <div class="mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" style="color: rgba(158, 87, 179, 0.3);">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                            </svg>
+                        </div>
+                        <p class="text-gray-300 mb-6 italic">
+                            "La demande pour les ingénieurs logiciels va croître, car l'IA leur permettra de relever des défis plus complexes."
+                        </p>
                     </div>
-                    <p class="text-gray-300 mb-6 italic">
-                        "La demande pour les ingénieurs logiciels va croître, car l'IA leur permettra de relever des défis plus complexes."
-                    </p>
-                    <div class="flex items-center">
+                    <div class="flex items-end mt-auto">
                         <img src="Todd_McKinnon.jpg" alt="Todd McKinnon" class="mr-4 h-12 w-12 rounded-full object-cover">
                         <div>
                             <h4 class="font-semibold">Todd McKinnon</h4>
                             <p class="text-gray-400 text-sm">PDG, Okta</p>
-                            <!-- <p class="text-sm mt-1" style="color: var(--accent-purple);">
-                                Croissance continue de la demande pour les développeurs
-                            </p> -->
                         </div>
                     </div>
                 </div>
                 
                 <!-- Testimonial 3 - Google -->
-                <div class="rounded-lg p-8 card-testimonial" style="background-color: var(--bg-tertiary); border: 1px solid #1a1a1a;">
-                    <div class="mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" style="color: rgba(158, 87, 179, 0.3);">
-                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                        </svg>
+                <div class="rounded-lg p-8 card-testimonial glow-purple flex flex-col justify-between h-full" style="border: 1px solid #1a1a1a;">
+                    <div>
+                        <div class="mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" style="color: rgba(158, 87, 179, 0.3);">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                            </svg>
+                        </div>
+                        <p class="text-gray-300 mb-6 italic">
+                            "Plus d'un quart du nouveau code de Google est généré par l'IA."
+                        </p>
                     </div>
-                    <p class="text-gray-300 mb-6 italic">
-                        "Plus d'un quart du nouveau code de Google est généré par l'IA."
-                    </p>
-                    <div class="flex items-center">
+                    <div class="flex items-end mt-auto">
                         <img src="sundar_pichai.jpg" alt="Sundar Pichai" class="mr-4 h-12 w-12 rounded-full object-cover">
                         <div>
                             <h4 class="font-semibold">Sundar Pichai</h4>
                             <p class="text-gray-400 text-sm">PDG, Google</p>
-                            <!-- <p class="text-sm mt-1" style="color: var(--accent-purple);">
-                                Plus de 25% du nouveau code de Google est généré par l'IA
-                            </p> -->
                         </div>
                     </div>
                 </div>
@@ -615,7 +603,7 @@
             <div class="flex flex-col lg:flex-row">
                 <div class="lg:w-1/2 lg:pr-12 mb-12 lg:mb-0">
                     <p class="section-label" style="color: var(--accent-green);">L'Ère du dévelopeur augmenté</p>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Notre <span style="color: var(--accent-green); font-weight: bold;">Vision</span> du Développeur 2030</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6"><span style="color: var(--accent-green); font-weight: bold;">Vision</span> du Développeur 2030</h2>
                     <p class="text-xl text-gray-300 mb-6">
                         L'ère de l'IA agentique ne signifie pas la fin du développeur, mais sa transformation en une version plus puissante, plus stratégique et plus créative.
                     </p>

@@ -26,6 +26,10 @@ Notre focus actuel est la création complète de la page d'atterrissage pour le 
    - Section vision présentant l'évolution des rôles et les compétences nécessaires (accents verts et bleus)
 
 ## Changements Récents
+- **Amélioration de l'alignement des images de témoignages (04/09/2025)**:
+  - Modification de l'alignement des images de profil dans la section témoignages pour qu'elles soient alignées au bas des boîtes
+  - Changement de la classe CSS `items-center` à `items-end` dans les conteneurs flex pour les trois témoignages
+
 - **Mise à jour des Témoignages (04/09/2025)**:
   - Remplacement des témoignages fictifs par des citations réelles de leaders de l'industrie technologique:
     - Kevin Scott (CTO, Microsoft): Prédiction que 95% du code sera généré par l'IA dans 5 ans

@@ -26,6 +26,12 @@ Notre focus actuel est la création complète de la page d'atterrissage pour le 
    - Section vision présentant l'évolution des rôles et les compétences nécessaires (accents verts et bleus)
 
 ## Changements Récents
+- **Mise à jour des Témoignages (04/09/2025)**:
+  - Remplacement des témoignages fictifs par des citations réelles de leaders de l'industrie technologique:
+    - Kevin Scott (CTO, Microsoft): Prédiction que 95% du code sera généré par l'IA dans 5 ans
+    - Todd McKinnon (PDG, Okta): Perspective sur la croissance de la demande pour les ingénieurs logiciels
+    - Sundar Pichai (PDG, Google): Information que plus de 25% du nouveau code de Google est généré par l'IA
+
 - **Mise à jour du Design Visuel (04/09/2025 - v2)**:
   - Remplacement des couleurs d'accent par la nouvelle palette: Orange-Rouge (#FF4931), Violet (#9e57b3), Vert Vif (#1AFB6F), Bleu (#267AD2).
   - Assombrissement significatif des couleurs de fond (#050505, #080808, #0c0c0c).

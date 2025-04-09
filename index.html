@@ -80,7 +80,7 @@
             letter-spacing: -0.01em;
         }
         
-        /* Glowing effects - more subtle */
+        /* Glowing effects - consistent intensity but different colors */
         .glow-orange-red {
             box-shadow: 0 0 8px rgba(255, 73, 49, 0.2);
         }
@@ -94,7 +94,7 @@
         }
         
         .glow-blue {
-             box-shadow: 0 0 8px rgba(38, 122, 210, 0.2);
+            box-shadow: 0 0 8px rgba(38, 122, 210, 0.2);
         }
         
         /* Tech patterns background - more subtle */
@@ -129,17 +129,21 @@
         }
         
         /* Custom hover effects for cards */
+        .card-challenge {
+            box-shadow: 0 0 8px rgba(38, 122, 210, 0.2); /* Blue glowing effect for challenge boxes */
+        }
+        
         .card-challenge:hover {
-            transform: translateY(-5px);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
         
         .card-testimonial {
             transition: all 0.3s ease;
+            box-shadow: 0 0 8px rgba(158, 87, 179, 0.2); /* Purple glow with consistent intensity */
         }
         
         .card-testimonial:hover {
-            box-shadow: 0 0 15px rgba(158, 87, 179, 0.15);
+            box-shadow: 0 0 8px rgba(158, 87, 179, 0.2); /* Consistent intensity */
         }
         
         /* Custom button style */
@@ -696,7 +700,7 @@
                             </p>
                             <form class="space-y-4">
                                 <div>
-                                    <input type="email" placeholder="Votre email professionnel" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-red-500" style="--tw-ring-color: var(--accent-orange-red); font-family: 'DM Sans', sans-serif;">
+                                    <input type="email" placeholder="Votre email professionnel" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-red-500" style="--tw-ring-color: var(--accent-green); font-family: 'DM Sans', sans-serif;">
                                 </div>
                                 <button type="submit" class="w-full btn-primary text-white p-3 rounded-md font-medium animate-pulse" style="background-color: var(--accent-green); letter-spacing: 0.02em;" onmouseover="this.style.boxShadow='0 5px 15px rgba(26, 251, 111, 0.5)'" onmouseout="this.style.boxShadow=''">
                                     Débloquer Mon Potentiel

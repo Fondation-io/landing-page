@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyborg Dev | Évolution du Développeur à l'Ère de l'IA Agentique</title>
+    <meta name="description" content="Préparez-vous pour l'avenir du développement à l'ère de l'IA agentique avec notre formation premium Cyborg Dev.">
+    
+    <!-- Tailwind CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts: Space Grotesk for headings, DM Sans for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <style>
+        /* Base styles */
+        :root {
+            --bg-primary: #000000; /* Pure black like Next.js */
+            --bg-secondary: #080808; /* Keep existing */
+            --bg-tertiary: #0c0c0c; /* Keep existing */
+            --accent-orange-red: #FF4931; /* Primary */
+            --accent-purple: #9e57b3;    /* Secondary */
+            --accent-green: #1AFB6F;     /* Tertiary */
+            --accent-blue: #267AD2;      /* Links/Other */
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.02em;
+        }
+        
+        /* Enhanced typography styles */
+        h1 {
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+        
+        h2 {
+            font-weight: 600;
+        }
+        
+        h3 {
+            font-weight: 500;
+        }
+        
+        /* Section labels with all caps for more visual interest */
+        .section-label {
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.85em;
+            font-weight: 500;
+            margin-bottom: 0.5em;
+        }
+        
+        /* Gradient text effect for key headings */
+        .gradient-heading {
+            background: linear-gradient(90deg, var(--accent-orange-red), var(--accent-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        /* Custom text highlight */
+        .gradient-text {
+            color: var(--accent-orange-red);
+            font-weight: bold;
+            letter-spacing: -0.01em;
+        }
+        
+        /* Glowing effects - more subtle */
+        .glow-orange-red {
+            box-shadow: 0 0 8px rgba(255, 73, 49, 0.2);
+        }
+        
+        .glow-purple {
+            box-shadow: 0 0 8px rgba(158, 87, 179, 0.2);
+        }
+        
+        .glow-green {
+            box-shadow: 0 0 8px rgba(26, 251, 111, 0.2);
+        }
+        
+        .glow-blue {
+             box-shadow: 0 0 8px rgba(38, 122, 210, 0.2);
+        }
+        
+        /* Tech patterns background - more subtle */
+        .tech-pattern {
+            background-image:
+                radial-gradient(rgba(26, 251, 111, 0.03) 1px, transparent 1px),
+                radial-gradient(rgba(158, 87, 179, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            background-color: var(--bg-primary);
+        }
+        
+        /* Custom animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-up {
+            animation: fadeUp 0.8s ease-out forwards;
+        }
+        
+        /* Hero overlay */
+        .hero-gradient {
+            background: rgba(5, 5, 5, 0.85);
+        }
+        
+        /* Custom hover effects for cards */
+        .card-challenge:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+        
+        .card-testimonial {
+            transition: all 0.3s ease;
+        }
+        
+        .card-testimonial:hover {
+            box-shadow: 0 0 15px rgba(158, 87, 179, 0.15);
+        }
+        
+        /* Custom button style */
+        .btn-primary {
+            background-color: var(--accent-orange-red);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(255, 73, 49, 0.2);
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Circuit animation styles */
+        .circuit-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none; /* Allow clicks to pass through */
+            overflow: hidden;
+        }
+        
+        .circuit-svg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        
+        /* Section-specific positioning */
+        .hero-circuits {
+            height: 100vh; /* Full height for hero section */
+        }
+        
+        .defis-circuits {
+            height: 100%;
+        }
+        
+        .temoignages-circuits {
+            height: 100%;
+        }
+        
+        .vision-circuits {
+            height: 100%;
+        }
+        
+        /* Circuit line base styling */
+        .circuit-line {
+            stroke-width: 1px;
+            fill: none;
+            stroke-dasharray: 5, 15; /* Create dashed line effect */
+            opacity: 0.2; /* Slightly increased base opacity for better visibility */
+            filter: drop-shadow(0 0 2px currentColor); /* Enhanced subtle glow */
+        }
+        
+        /* Color variations - using the current brand colors but with reduced opacity */
+        .circuit-orange-red {
+            stroke: rgba(255, 73, 49, 0.8);
+        }
+        
+        .circuit-purple {
+            stroke: rgba(158, 87, 179, 0.8);
+        }
+        
+        .circuit-green {
+            stroke: rgba(26, 251, 111, 0.8);
+        }
+        
+        .circuit-blue {
+            stroke: rgba(38, 122, 210, 0.8);
+        }
+        
+        /* Flow animation for circuit lines */
+        @keyframes flowAnimation {
+            0% {
+                stroke-dashoffset: 100;
+                opacity: 0.2;
+            }
+            50% {
+                opacity: 0.5; /* Slightly increased peak brightness */
+            }
+            100% {
+                stroke-dashoffset: 0;
+                opacity: 0.2;
+            }
+        }
+        
+        /* Apply animation to all circuit lines */
+        .circuit-line {
+            animation: flowAnimation 20s linear infinite; /* Slower animation for more subtle effect */
+        }
+        
+        /* Create staggered animation effect with different delay classes */
+        .delay-1 {
+            animation-delay: -3s;
+            animation-duration: 18s; /* Slightly faster */
+        }
+        
+        .delay-2 {
+            animation-delay: -7s;
+            animation-duration: 22s; /* Slightly slower */
+        }
+        
+        .delay-3 {
+            animation-delay: -12s;
+            animation-duration: 25s; /* Even slower */
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            /* Simplified circuit paths for mobile */
+            .circuit-line.mobile-hidden {
+                display: none;
+            }
+            
+            /* Reduce animation complexity on mobile */
+            .circuit-line {
+                animation-duration: 25s; /* Slower animation to reduce GPU load */
+            }
+        }
+        
+        /* Animation reduction for users who prefer reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .circuit-line {
+                animation: none;
+                opacity: 0.2;
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen">
+    <!-- Circuit Animations Container -->
+    <div class="circuit-container">
+        <!-- Hero Section Circuits (Orange-Red) -->
+        <svg class="circuit-svg hero-circuits" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
+            <!-- Left side circuits connecting to hero content -->
+            <path
+                class="circuit-line circuit-orange-red delay-1"
+                d="M120,150 L220,150 L220,250 L350,250"
+            />
+            
+            <!-- Right side circuits connecting to form -->
+            <path
+                class="circuit-line circuit-orange-red delay-2"
+                d="M850,180 L950,180 L950,300 L1050,300"
+            />
+            
+            <!-- Bottom circuits connecting sections -->
+            <path
+                class="circuit-line circuit-orange-red delay-3"
+                d="M400,650 L400,700 L600,700 L600,750"
+            />
+            
+            <!-- Central circuits connecting hero sections -->
+            <path
+                class="circuit-line circuit-orange-red delay-1"
+                d="M600,200 L600,300 L700,300 L700,350"
+            />
+            
+            <!-- Diagonal accent circuit -->
+            <path
+                class="circuit-line circuit-orange-red delay-2"
+                d="M300,400 L450,400 L500,450 L650,450"
+            />
+        </svg>
+        
+        <!-- Défis Section Circuits (Blue) -->
+        <svg class="circuit-svg defis-circuits" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
+            <path
+                class="circuit-line circuit-blue delay-1"
+                d="M200,100 L200,200 L400,200"
+            />
+            
+            <path
+                class="circuit-line circuit-blue delay-2"
+                d="M600,150 L800,150 L800,300"
+            />
+            
+            <path
+                class="circuit-line circuit-blue delay-3"
+                d="M300,400 L300,500 L500,500 L500,600"
+            />
+            
+            <path
+                class="circuit-line circuit-blue delay-1 mobile-hidden"
+                d="M900,250 L1000,250 L1000,400 L1100,400"
+            />
+        </svg>
+        
+        <!-- Témoignages Section Circuits (Purple) -->
+        <svg class="circuit-svg temoignages-circuits" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
+            <path
+                class="circuit-line circuit-purple delay-2"
+                d="M150,100 L150,300 L300,300"
+            />
+            
+            <path
+                class="circuit-line circuit-purple delay-1"
+                d="M500,200 L700,200 L700,400"
+            />
+            
+            <path
+                class="circuit-line circuit-purple delay-3"
+                d="M900,150 L900,350 L750,350"
+            />
+            
+            <path
+                class="circuit-line circuit-purple delay-2 mobile-hidden"
+                d="M400,500 L600,500 L600,600 L800,600"
+            />
+        </svg>
+        
+        <!-- Vision Section Circuits (Green) -->
+        <svg class="circuit-svg vision-circuits" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
+            <path
+                class="circuit-line circuit-green delay-3"
+                d="M200,100 L200,250 L350,250"
+            />
+            
+            <path
+                class="circuit-line circuit-green delay-1"
+                d="M500,150 L650,150 L650,300 L800,300"
+            />
+            
+            <path
+                class="circuit-line circuit-green delay-2"
+                d="M850,200 L950,200 L950,400"
+            />
+            
+            <path
+                class="circuit-line circuit-green delay-3 mobile-hidden"
+                d="M300,450 L300,550 L500,550 L500,650"
+            />
+            
+            <path
+                class="circuit-line circuit-green delay-1"
+                d="M700,500 L900,500 L900,600 L1050,600"
+            />
+        </svg>
+    </div>
+    <!-- Header -->
+    <header class="fixed w-full bg-opacity-95 bg-black z-50 backdrop-filter backdrop-blur-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <h1 class="text-2xl font-bold">
+                    <span class="text-white" style="letter-spacing: -0.03em;">Cyborg</span>
+                    <span class="gradient-heading">Dev</span>
+                </h1>
+            </div>
+            <!-- <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="#defis" class="text-gray-300 hover:text-white transition" style="letter-spacing: 0.02em;">Défis</a></li>
+                    <li><a href="#temoignages" class="text-gray-300 hover:text-white transition" style="letter-spacing: 0.02em;">Témoignages</a></li>
+                    <li><a href="#vision" class="text-gray-300 hover:text-white transition" style="letter-spacing: 0.02em;">Vision</a></li>
+                </ul>
+            </nav>
+            <button class="btn-primary text-white px-4 py-2 rounded-md text-sm font-medium" style="letter-spacing: 0.02em;">S'inscrire</button> -->
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center tech-pattern">
+        <div class="absolute inset-0 hero-gradient"></div>
+        <div class="container mx-auto px-4 py-20 relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 animate-fade-up" style="animation-delay: 0.2s">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+                        L'Évolution du <span class="gradient-heading">Développeur</span> à l'Ère de l'IA Agentique
+                    </h1>
+                    <p class="text-xl text-gray-300 mb-8">
+                        Ne craignez pas d'être remplacé — préparez-vous à être augmenté. Découvrez comment transformer la menace de l'IA en votre plus grand avantage professionnel.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#inscription" class="btn-primary text-white px-8 py-3 rounded-md text-lg font-medium text-center" style="letter-spacing: 0.01em;">
+                            Réservez Votre Place
+                        </a>
+                        <a href="#defis" class="bg-transparent border border-gray-500 hover:border-blue-500 hover:bg-gray-800 text-white px-8 py-3 rounded-md text-lg font-medium text-center transition" style="--tw-hover-border-opacity: 1; --tw-hover-border-color: rgba(38, 122, 210, var(--tw-hover-border-opacity)); letter-spacing: 0.01em;">
+                            Découvrir Plus
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 animate-fade-up" style="animation-delay: 0.4s">
+                    <div class="bg-gray-900 bg-opacity-70 p-8 rounded-lg border border-gray-800 glow-orange-red">
+                        <h3 class="text-xl mb-4 font-medium">Accès Prioritaire</h3>
+                        <p class="text-gray-300 mb-4">Inscrivez-vous pour être parmi les premiers à accéder à notre formation exclusive.</p>
+                        <form class="space-y-4">
+                            <div>
+                                <input type="email" placeholder="Votre email professionnel" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-red-500" style="--tw-ring-color: var(--accent-orange-red); font-family: 'DM Sans', sans-serif;">
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Votre nom" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-red-500" style="--tw-ring-color: var(--accent-orange-red); font-family: 'DM Sans', sans-serif;">
+                            </div>
+                            <button type="submit" class="w-full btn-primary text-white p-3 rounded-md font-medium" style="letter-spacing: 0.01em;">
+                                Réserver Ma Place
+                            </button>
+                        </form>
+                        <p class="text-xs text-gray-400 mt-4 text-center">Places limitées. Nous respectons votre vie privée.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges Section -->
+    <section id="defis" class="py-20" style="background-color: var(--bg-secondary);">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <p class="section-label" style="color: var(--accent-blue);">Section 01</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Les <span style="color: var(--accent-blue); font-weight: bold;">Défis</span> des Développeurs</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    L'IA agentique transforme profondément le paysage du développement logiciel. Voici les principaux défis auxquels sont confrontés les développeurs aujourd'hui.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Challenge 1 -->
+                <div class="rounded-lg p-8 card-challenge" style="background-color: var(--bg-tertiary);">
+                    <div class="h-14 w-14 bg-gray-700 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-blue);">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Obsolescence des Compétences</h3>
+                    <p class="text-gray-300 mb-4">
+                        Les compétences qui étaient essentielles il y a à peine quelques années deviennent rapidement obsolètes face à l'IA générative.
+                    </p>
+                    <div class="border-t border-gray-700 pt-4 mt-4">
+                        <p class="font-semibold" style="color: var(--accent-blue);">
+                            65% des compétences techniques actuelles seront transformées dans les 3 prochaines années.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Challenge 2 -->
+                <div class="rounded-lg p-8 card-challenge" style="background-color: var(--bg-tertiary);">
+                    <div class="h-14 w-14 bg-gray-700 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-blue);">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Compétition Accrue</h3>
+                    <p class="text-gray-300 mb-4">
+                        L'IA démocratise la création de code, permettant à davantage de personnes d'entrer dans le domaine du développement sans formation traditionnelle.
+                    </p>
+                    <div class="border-t border-gray-700 pt-4 mt-4">
+                        <p class="font-semibold" style="color: var(--accent-blue);">
+                            Augmentation de 300% du nombre de développeurs "assistés par IA" depuis 2023.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Challenge 3 -->
+                <div class="rounded-lg p-8 card-challenge" style="background-color: var(--bg-tertiary);">
+                    <div class="h-14 w-14 bg-gray-700 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-blue);">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Incertitude du Rôle</h3>
+                    <p class="text-gray-300 mb-4">
+                        Les frontières entre le développeur et l'IA deviennent floues, soulevant des questions sur l'identité professionnelle et la valeur ajoutée humaine.
+                    </p>
+                    <div class="border-t border-gray-700 pt-4 mt-4">
+                        <p class="font-semibold" style="color: var(--accent-blue);">
+                            72% des développeurs s'inquiètent de la redéfinition de leur rôle dans les 5 prochaines années.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="temoignages" class="py-20 tech-pattern" style="background-color: var(--bg-primary);">
+        <div class="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-orange-red);">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </div>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <p class="section-label" style="color: var(--accent-purple);">Section 02</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ce que disent les <span class="gradient-heading">Experts</span></h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Les leaders de l'industrie technologique partagent leur vision sur l'avenir du développement à l'ère de l'IA agentique.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="rounded-lg p-8 card-testimonial" style="background-color: var(--bg-tertiary); border: 1px solid #1a1a1a;">
+                    <div class="mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" style="color: rgba(158, 87, 179, 0.3);">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic" style="line-height: 1.7; font-weight: 300; letter-spacing: 0.01em;">
+                        "Ce n'est plus une question de si mais de quand. Les développeurs qui n'adopteront pas un modèle de travail hybride avec l'IA seront aussi pertinents qu'un programmeur COBOL en 2023. Nous assistons à la plus grande transformation de notre profession depuis l'avènement d'Internet."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="mr-4 h-12 w-12 bg-gray-700 rounded-full"></div>
+                        <div>
+                            <h4 class="font-semibold">Sophie Laurent</h4>
+                            <p class="text-gray-400 text-sm">Directrice de l'Innovation, TechFuture</p>
+                            <p class="text-sm mt-1" style="color: var(--accent-purple);">
+                                +47% d'efficacité avec développeurs augmentés par IA
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="rounded-lg p-8 card-testimonial" style="background-color: var(--bg-tertiary); border: 1px solid #1a1a1a;">
+                    <div class="mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" style="color: rgba(158, 87, 179, 0.3);">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic">
+                        "Nos études montrent que 35% des tâches de développement sont déjà automatisables. Ce chiffre atteindra 80% d'ici 2028. Les développeurs doivent évoluer vers un rôle d'architecte augmenté où leur valeur réside dans leur vision et leur capacité à diriger l'IA, pas dans le code lui-même."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="mr-4 h-12 w-12 bg-gray-700 rounded-full"></div>
+                        <div>
+                            <h4 class="font-semibold">Marc Dubois</h4>
+                            <p class="text-gray-400 text-sm">PDG, CodeAI Systems</p>
+                            <p class="text-sm mt-1" style="color: var(--accent-purple);">
+                                85% des entreprises prévoient d'adopter l'IA agentique d'ici 2027
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="rounded-lg p-8 card-testimonial" style="background-color: var(--bg-tertiary); border: 1px solid #1a1a1a;">
+                    <div class="mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" style="color: rgba(158, 87, 179, 0.3);">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic">
+                        "Le fossé se creuse déjà entre les développeurs augmentés et traditionnels. Dans notre entreprise, nous constatons une différence de productivité de 5 pour 1. La bonne nouvelle? C'est une compétence qui peut s'acquérir, mais la fenêtre d'opportunité se referme rapidement."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="mr-4 h-12 w-12 bg-gray-700 rounded-full"></div>
+                        <div>
+                            <h4 class="font-semibold">Amélie Moreau</h4>
+                            <p class="text-gray-400 text-sm">CTO, NextGen Software</p>
+                            <p class="text-sm mt-1" style="color: var(--accent-purple);">
+                                400% d'augmentation de productivité avec intégration IA avancée
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="py-20 relative" style="background-color: var(--bg-secondary);">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 lg:pr-12 mb-12 lg:mb-0">
+                    <p class="section-label" style="color: var(--accent-green);">Section 03</p>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Notre <span style="color: var(--accent-green); font-weight: bold;">Vision</span> du Développeur 2030</h2>
+                    <p class="text-xl text-gray-300 mb-6">
+                        L'ère de l'IA agentique ne signifie pas la fin du développeur, mais sa transformation en une version plus puissante, plus stratégique et plus créative.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full flex items-center justify-center" style="background-color: var(--bg-tertiary);">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-green);">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold">Architecte de Systèmes Complexes</h3>
+                                <p class="text-gray-300">Au lieu de coder des fonctions, vous orchestrerez des systèmes entiers en utilisant l'IA pour implémenter votre vision.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full flex items-center justify-center" style="background-color: var(--bg-tertiary);">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-green);">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold">Évaluateur Critique</h3>
+                                <p class="text-gray-300">Votre valeur résidera dans votre capacité à juger, raffiner et améliorer ce que l'IA produit, en apportant nuance et contexte.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full flex items-center justify-center" style="background-color: var(--bg-tertiary);">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-green);">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold">Expert en Prompt Engineering</h3>
+                                <p class="text-gray-300">Communiquer efficacement avec les systèmes d'IA deviendra une compétence aussi fondamentale que la syntaxe d'un langage de programmation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="rounded-lg p-8 glow-green" style="background-color: var(--bg-tertiary);">
+                        <h3 class="text-2xl font-bold mb-6">
+                            Compétences Cruciales pour le <span class="gradient-heading">Développeur Augmenté</span>
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-green);">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Pensée systémique et architecture à grande échelle</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-green);">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Collaboration homme-machine efficace</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-green);">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Évaluation critique de la qualité du code</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-green);">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Conception d'expériences d'IA centrées sur l'humain</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-green);">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Gouvernance éthique et responsable de l'IA</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-8 p-6 border border-gray-800 rounded-lg" id="inscription" style="background-color: rgba(12, 12, 12, 0.6);">
+                            <h4 class="text-xl font-semibold mb-4">Prêt à évoluer?</h4>
+                            <p class="text-gray-300 mb-6">
+                                La fenêtre d'opportunité est maintenant. Rejoignez les développeurs visionnaires qui façonneront l'avenir.
+                            </p>
+                            <form class="space-y-4">
+                                <div>
+                                    <input type="email" placeholder="Votre email professionnel" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-red-500" style="--tw-ring-color: var(--accent-orange-red); font-family: 'DM Sans', sans-serif;">
+                                </div>
+                                <button type="submit" class="w-full btn-primary text-white p-3 rounded-md font-medium animate-pulse" style="background-color: var(--accent-green); letter-spacing: 0.02em;" onmouseover="this.style.boxShadow='0 5px 15px rgba(26, 251, 111, 0.5)'" onmouseout="this.style.boxShadow=''">
+                                    Débloquer Mon Potentiel
+                                </button>
+                            </form>
+                            <p class="text-xs text-gray-400 mt-4 text-center">Places limitées à 50 développeurs par cohorte.</p>
+                            <p class="text-xs text-gray-500 mt-2 text-center">Différent de l'inscription principale - Focus sur les compétences futures</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12" style="background-color: #030303;">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-2xl font-bold">
+                        <span class="text-white" style="letter-spacing: -0.03em;">Cyborg</span>
+                        <span class="gradient-heading">Dev</span>
+                    </h2>
+                    <p class="text-gray-400 mt-2">L'évolution du développeur à l'ère de l'IA agentique</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition" style="letter-spacing: 0.02em;">Confidentialité</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition" style="letter-spacing: 0.02em;">Conditions</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition" style="letter-spacing: 0.02em;">Contact</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-500 text-sm" style="letter-spacing: 0.01em;">
+                    &copy; 2025 Cyborg Dev. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Minimal JavaScript for interactions -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Simple form validation
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const emailInput = form.querySelector('input[type="email"]');
+                    if (emailInput && emailInput.value) {
+                        // Here you would normally submit the form or make an API call
+                        alert('Merci! Votre demande a été reçue. Nous vous contacterons bientôt.');
+                        form.reset();
+                    } else {
+                        alert('Veuillez saisir votre adresse email.');
+                    }
+                });
+            });
+        });
+        
+        // JavaScript to dynamically adjust circuit positions
+        function updateCircuitPositions() {
+            const sections = [
+                { selector: '.hero-circuits', sectionId: null }, // Hero section
+                { selector: '.defis-circuits', sectionId: 'defis' },
+                { selector: '.temoignages-circuits', sectionId: 'temoignages' },
+                { selector: '.vision-circuits', sectionId: 'vision' }
+            ];
+            
+            sections.forEach(({selector, sectionId}) => {
+                const circuitSvg = document.querySelector(selector);
+                if (!circuitSvg) return;
+                
+                let section;
+                if (sectionId) {
+                    section = document.getElementById(sectionId);
+                } else {
+                    // For hero section which doesn't have an ID
+                    section = document.querySelector('section.tech-pattern');
+                }
+                
+                if (section && circuitSvg) {
+                    const rect = section.getBoundingClientRect();
+                    
+                    // Position the SVG to match the section
+                    circuitSvg.style.top = `${section.offsetTop}px`;
+                    circuitSvg.style.height = `${rect.height}px`;
+                    
+                    // Make sure the SVG is behind the content but visible
+                    circuitSvg.style.zIndex = "1";
+                }
+            });
+        }
+        
+        // Update on load, resize, and periodically to ensure proper positioning
+        window.addEventListener('load', updateCircuitPositions);
+        window.addEventListener('resize', updateCircuitPositions);
+        
+        // Call updateCircuitPositions periodically to ensure proper positioning
+        // This helps with dynamic content and ensures circuits stay aligned
+        setInterval(updateCircuitPositions, 2000);
+    </script>
+</body>
+</html>

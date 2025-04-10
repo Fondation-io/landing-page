@@ -80,21 +80,25 @@
             letter-spacing: -0.01em;
         }
         
-        /* Glowing effects - consistent intensity but different colors */
+        /* Glowing effects - enhanced for better rounded corners */
         .glow-orange-red {
-            box-shadow: 0 0 8px rgba(255, 73, 49, 0.3);
+            box-shadow: 0 0 12px rgba(255, 73, 49, 0.3);
+            transition: box-shadow 0.3s ease;
         }
         
         .glow-purple {
-            box-shadow: 0 0 8px rgba(158, 87, 179, 0.35);
+            box-shadow: 0 0 12px rgba(158, 87, 179, 0.35);
+            transition: box-shadow 0.3s ease;
         }
         
         .glow-green {
-            box-shadow: 0 0 8px rgba(26, 251, 111, 0.25);
+            box-shadow: 0 0 12px rgba(26, 251, 111, 0.25);
+            transition: box-shadow 0.3s ease;
         }
         
         .glow-blue {
-            box-shadow: 0 0 8px rgba(38, 122, 210, 0.3);
+            box-shadow: 0 0 12px rgba(38, 122, 210, 0.3);
+            transition: box-shadow 0.3s ease;
         }
         
         /* Tech patterns background - more subtle */
@@ -132,7 +136,7 @@
         .card-challenge {
             /* Base styles for challenge cards */
             background-color: rgba(8, 8, 8, 0.5);
-            border-radius: 0.5rem;
+            border-radius: 1rem; /* Increased from 0.5rem for more pronounced rounded corners */
             padding: 1.5rem;
             transition: all 0.3s ease;
             border: 1px solid rgba(38, 122, 210, 0.1);
@@ -141,7 +145,7 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
         
-        /* Border-only glow effect starting from bottom right */
+        /* Border-only glow effect starting from bottom right - improved for better rounded corners */
         .card-challenge::after {
             content: '';
             position: absolute;
@@ -149,16 +153,10 @@
             left: 0;
             right: 0;
             bottom: 0;
-            border-radius: 0.5rem;
-            border: 2px solid transparent;
-            border-image: linear-gradient(
-                to top left,
-                rgba(38, 122, 210, 0.8) 0%,
-                rgba(38, 122, 210, 0.6) 25%,
-                rgba(38, 122, 210, 0.4) 50%,
-                rgba(38, 122, 210, 0.2) 75%,
-                rgba(38, 122, 210, 0) 100%
-            ) 1;
+            border-radius: 1rem; /* Matching the parent's border-radius */
+            /* Removed border-image which can interfere with border-radius */
+            box-shadow: inset 0 0 0 2px rgba(38, 122, 210, 0.4);
+            /* Added additional outer glow for better effect */
             filter: drop-shadow(0 0 4px rgba(38, 122, 210, 0.5));
             z-index: 0;
             pointer-events: none;
@@ -192,15 +190,17 @@
             /* Hover effect can be added here if needed */
         }
         
-        /* Custom button style */
+        /* Custom button style with enhanced hover effect for rounded corners */
         .btn-primary {
             background-color: var(--accent-orange-red);
             transition: all 0.3s ease;
+            border-radius: 0.5rem; /* Base border-radius */
         }
         
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 10px rgba(255, 73, 49, 0.2);
+            box-shadow: 0 5px 15px rgba(255, 73, 49, 0.3);
+            border-radius: 0.75rem; /* Slightly increased border-radius on hover for effect */
         }
         
         @keyframes pulse {
@@ -356,7 +356,7 @@
             bottom: 0;
             width: 4px;
             background: linear-gradient(to bottom, rgba(38, 122, 210, 0.3), rgba(38, 122, 210, 0.8));
-            border-radius: 2px;
+            border-radius: 4px; /* Increased for more pronounced rounded corners */
             box-shadow: 0 0 8px rgba(38, 122, 210, 0.2);
             transition: all 0.3s ease;
         }
@@ -365,11 +365,14 @@
             left: auto;
             right: 0;
             background: linear-gradient(to bottom, rgba(38, 122, 210, 0.8), rgba(38, 122, 210, 0.3));
+            border-radius: 4px; /* Ensuring consistent rounded corners */
         }
         
-        .card-challenge:hover .challenge-vertical-trait {
+        .card-challenge:hover .challenge-vertical-trait,
+        .card-challenge:hover .challenge-vertical-trait-reverse {
             width: 6px;
             box-shadow: 0 0 12px rgba(38, 122, 210, 0.4);
+            border-radius: 6px; /* Increased border-radius on hover to match width */
         }
         
         /* Responsive adjustments for vertical trait */
@@ -510,8 +513,8 @@
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center">
                 <h1 class="text-2xl font-bold">
-                    <span class="text-white" style="letter-spacing: -0.03em;">Cyborg</span>
-                    <span class="gradient-heading">Dev</span>
+                    <span class="text-white" style="letter-spacing: -0.03em;">Fondation</span>
+                    <span class="gradient-heading">io</span>
                 </h1>
             </div>
         </div>
@@ -524,24 +527,24 @@
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-12 md:mb-0 animate-fade-up" style="animation-delay: 0.2s">
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-                        L'Évolution du <span class="gradient-heading">Développeur</span> à l'Ère de l'IA Agentique
+                        Fusionnez avec l'<span class="gradient-heading">IA</span> ou Devenez Obsolète
                     </h1>
                     <p class="text-xl text-gray-300 mb-8">
                         Ne craignez pas d'être remplacé — préparez-vous à être augmenté. Découvrez comment transformer la menace de l'IA en votre plus grand avantage professionnel.
                     </p>
                 </div>
                 <div class="md:w-1/2 animate-fade-up" style="animation-delay: 0.4s">
-                    <div class="bg-gray-900 bg-opacity-70 p-8 rounded-lg border border-gray-800 glow-orange-red">
+                    <div class="bg-gray-900 bg-opacity-70 p-8 rounded-xl border border-gray-800 glow-orange-red">
                         <h3 class="text-xl mb-4 font-medium">Accès Prioritaire</h3>
                         <p class="text-gray-300 mb-4">Inscrivez-vous pour être parmi les premiers à accéder à notre formation exclusive.</p>
                         <form class="space-y-4">
                             <div>
-                                <input type="email" placeholder="Votre email professionnel" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-red-500" style="--tw-ring-color: var(--accent-orange-red); font-family: 'DM Sans', sans-serif;">
+                                <input type="email" placeholder="Votre email professionnel" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-red-500" style="--tw-ring-color: var(--accent-orange-red); font-family: 'DM Sans', sans-serif;">
                             </div>
                             <div>
-                                <input type="text" placeholder="Votre nom" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-red-500" style="--tw-ring-color: var(--accent-orange-red); font-family: 'DM Sans', sans-serif;">
+                                <input type="text" placeholder="Votre nom" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-red-500" style="--tw-ring-color: var(--accent-orange-red); font-family: 'DM Sans', sans-serif;">
                             </div>
-                            <button type="submit" class="w-full btn-primary text-white p-3 rounded-md font-medium" style="letter-spacing: 0.01em;">
+                            <button type="submit" class="w-full btn-primary text-white p-3 font-medium" style="letter-spacing: 0.01em;">
                                 Réserver Ma Place
                             </button>
                         </form>
@@ -563,57 +566,39 @@
                 </p>
             </div>
             
-            <!-- ALTERNATING SECTIONS LAYOUT -->
-            <div class="alternating-layout space-y-12 flex flex-col items-center">
-                <!-- Section 1 - Left aligned -->
-                <div class="flex flex-col md:flex-row md:items-center items-start mb-16 card-challenge w-full md:w-3/4 self-start ml-0 mr-auto md:min-h-[180px] min-h-auto">
-                    <!-- Left side: Icon -->
-                    <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center items-center">
-                        <div class="h-28 w-28 flex items-center justify-center">
+            <!-- CENTRAL BLOCK LAYOUT -->
+            <div class="card-challenge w-full max-w-4xl mx-auto p-8 rounded-xl">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Challenge 1 -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="h-28 w-28 flex items-center justify-center mb-4">
                             <img src="hourglass.png" alt="Hourglass Icon" class="h-24 w-24 object-contain">
                         </div>
-                    </div>
-                    
-                    <!-- Right side: Content with vertical trait -->
-                    <div class="md:w-2/3 pl-0 md:pl-6 challenge-content relative">
-                        <p class="text-lg text-gray-300 mb-5">
+                        <p class="text-lg text-gray-300">
                             Les compétences qui étaient essentielles il y a à peine quelques années deviennent rapidement obsolètes face à l'IA générative.
                         </p>
                     </div>
-                </div>
-                
-                <!-- Section 2 (Reversed) - Right aligned -->
-                <div class="flex flex-col md:flex-row-reverse md:items-center items-start mb-16 card-challenge w-full md:w-3/4 self-end ml-auto mr-0 md:min-h-[180px] min-h-auto">
-                    <!-- Right side: Icon -->
-                    <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center items-center">
-                        <div class="h-28 w-28 flex items-center justify-center">
+                    
+                    <!-- Challenge 2 -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="h-28 w-28 flex items-center justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-blue); filter: drop-shadow(0 0 5px var(--accent-blue));">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </div>
-                    </div>
-                    <!-- Left side: Content with vertical trait -->
-                    <div class="md:w-2/3 pr-0 md:pr-6 challenge-content challenge-content-reverse relative">
-                        <p class="text-lg text-gray-300 mb-5">
+                        <p class="text-lg text-gray-300">
                             L'IA démocratise la création de code, permettant à davantage de personnes d'entrer dans le domaine du développement sans formation traditionnelle.
                         </p>
                     </div>
-                </div>
-                
-                <!-- Section 3 - Left aligned -->
-                <div class="flex flex-col md:flex-row md:items-center items-start mb-16 card-challenge w-full md:w-3/4 self-start ml-0 mr-auto md:min-h-[180px] min-h-auto">
-                    <!-- Left side: Icon -->
-                    <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center items-center">
-                        <div class="h-28 w-28 flex items-center justify-center">
+                    
+                    <!-- Challenge 3 -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="h-28 w-28 flex items-center justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-blue); filter: drop-shadow(0 0 5px var(--accent-blue));">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                             </svg>
                         </div>
-                    </div>
-                    
-                    <!-- Right side: Content with vertical trait -->
-                    <div class="md:w-2/3 pl-0 md:pl-6 challenge-content relative">
-                        <p class="text-lg text-gray-300 mb-5">
+                        <p class="text-lg text-gray-300">
                             Les frontières entre le développeur et l'IA deviennent floues, soulevant des questions sur l'identité professionnelle et la valeur ajoutée humaine.
                         </p>
                     </div>
@@ -640,7 +625,7 @@
             
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Testimonial 1 - Microsoft -->
-                <div class="rounded-lg p-8 card-testimonial glow-purple flex flex-col justify-between h-full" style="border: 1px solid #1a1a1a;">
+                <div class="rounded-xl p-8 card-testimonial glow-purple flex flex-col justify-between h-full" style="border: 1px solid #1a1a1a;">
                     <div>
                         <div class="mb-6">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" style="color: rgba(158, 87, 179, 0.3);">
@@ -652,7 +637,7 @@
                         </p>
                     </div>
                     <div class="flex items-end mt-auto">
-                        <img src="kevin_scott.jpg" alt="Kevin Scott" class="mr-4 h-12 w-12 rounded-full object-cover">
+                        <img src="kevin_scott.jpg" alt="Kevin Scott" class="mr-4 h-12 w-12 rounded-lg object-cover">
                         <div>
                             <h4 class="font-semibold">Kevin Scott</h4>
                             <p class="text-gray-400 text-sm">CTO, Microsoft</p>
@@ -661,7 +646,7 @@
                 </div>
                 
                 <!-- Testimonial 2 - Okta -->
-                <div class="rounded-lg p-8 card-testimonial glow-purple flex flex-col justify-between h-full" style="border: 1px solid #1a1a1a;">
+                <div class="rounded-xl p-8 card-testimonial glow-purple flex flex-col justify-between h-full" style="border: 1px solid #1a1a1a;">
                     <div>
                         <div class="mb-6">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" style="color: rgba(158, 87, 179, 0.3);">
@@ -673,7 +658,7 @@
                         </p>
                     </div>
                     <div class="flex items-end mt-auto">
-                        <img src="Todd_McKinnon.jpg" alt="Todd McKinnon" class="mr-4 h-12 w-12 rounded-full object-cover">
+                        <img src="Todd_McKinnon.jpg" alt="Todd McKinnon" class="mr-4 h-12 w-12 rounded-lg object-cover">
                         <div>
                             <h4 class="font-semibold">Todd McKinnon</h4>
                             <p class="text-gray-400 text-sm">PDG, Okta</p>
@@ -682,7 +667,7 @@
                 </div>
                 
                 <!-- Testimonial 3 - Google -->
-                <div class="rounded-lg p-8 card-testimonial glow-purple flex flex-col justify-between h-full" style="border: 1px solid #1a1a1a;">
+                <div class="rounded-xl p-8 card-testimonial glow-purple flex flex-col justify-between h-full" style="border: 1px solid #1a1a1a;">
                     <div>
                         <div class="mb-6">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" style="color: rgba(158, 87, 179, 0.3);">
@@ -694,7 +679,7 @@
                         </p>
                     </div>
                     <div class="flex items-end mt-auto">
-                        <img src="sundar_pichai.jpg" alt="Sundar Pichai" class="mr-4 h-12 w-12 rounded-full object-cover">
+                        <img src="sundar_pichai.jpg" alt="Sundar Pichai" class="mr-4 h-12 w-12 rounded-lg object-cover">
                         <div>
                             <h4 class="font-semibold">Sundar Pichai</h4>
                             <p class="text-gray-400 text-sm">PDG, Google</p>
@@ -717,7 +702,7 @@
                     </p>
                     <div class="space-y-6">
                         <div class="flex">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full flex items-center justify-center" style="background-color: var(--bg-tertiary);">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-xl flex items-center justify-center" style="background-color: var(--bg-tertiary);">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-green);">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
@@ -728,7 +713,7 @@
                             </div>
                         </div>
                         <div class="flex">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full flex items-center justify-center" style="background-color: var(--bg-tertiary);">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-xl flex items-center justify-center" style="background-color: var(--bg-tertiary);">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-green);">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
@@ -739,7 +724,7 @@
                             </div>
                         </div>
                         <div class="flex">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full flex items-center justify-center" style="background-color: var(--bg-tertiary);">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-xl flex items-center justify-center" style="background-color: var(--bg-tertiary);">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-green);">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
@@ -752,7 +737,7 @@
                     </div>
                 </div>
                 <div class="lg:w-1/2">
-                    <div class="rounded-lg p-8 glow-green" style="background-color: var(--bg-tertiary);">
+                    <div class="rounded-xl p-8 glow-green" style="background-color: var(--bg-tertiary);">
                         <h3 class="text-2xl font-bold mb-6">
                             Compétences Cruciales</span>
                         </h3>
@@ -789,16 +774,16 @@
                             </li>
                         </ul>
                         
-                        <div class="mt-8 p-6 border border-gray-800 rounded-lg" id="inscription" style="background-color: rgba(12, 12, 12, 0.6);">
+                        <div class="mt-8 p-6 border border-gray-800 rounded-xl" id="inscription" style="background-color: rgba(12, 12, 12, 0.6);">
                             <h4 class="text-xl font-semibold mb-4">Prêt à évoluer?</h4>
                             <p class="text-gray-300 mb-6">
                                 La fenêtre d'opportunité est maintenant. Rejoignez les développeurs visionnaires qui façonneront l'avenir.
                             </p>
                             <form class="space-y-4">
                                 <div>
-                                    <input type="email" placeholder="Votre email professionnel" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-red-500" style="--tw-ring-color: var(--accent-green); font-family: 'DM Sans', sans-serif;">
+                                    <input type="email" placeholder="Votre email professionnel" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-red-500" style="--tw-ring-color: var(--accent-green); font-family: 'DM Sans', sans-serif;">
                                 </div>
-                                <button type="submit" class="w-full btn-primary text-white p-3 rounded-md font-medium animate-pulse" style="background-color: var(--accent-green); letter-spacing: 0.02em;" onmouseover="this.style.boxShadow='0 5px 15px rgba(26, 251, 111, 0.5)'" onmouseout="this.style.boxShadow=''">
+                                <button type="submit" class="w-full btn-primary text-white p-3 font-medium animate-pulse" style="background-color: var(--accent-green); letter-spacing: 0.02em;" onmouseover="this.style.boxShadow='0 5px 15px rgba(26, 251, 111, 0.5)'; this.style.borderRadius='0.75rem';" onmouseout="this.style.boxShadow=''; this.style.borderRadius='0.5rem';">
                                     Débloquer Mon Potentiel
                                 </button>
                             </form>
@@ -817,20 +802,20 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
                     <h2 class="text-2xl font-bold">
-                        <span class="text-white" style="letter-spacing: -0.03em;">Cyborg</span>
-                        <span class="gradient-heading">Dev</span>
+                        <span class="text-white" style="letter-spacing: -0.03em;">Fondation</span>
+                        <span class="gradient-heading">io</span>
                     </h2>
                     <p class="text-gray-400 mt-2">L'évolution du développeur à l'ère de l'IA agentique</p>
                 </div>
-                <div class="flex space-x-6">
+                <!-- <div class="flex space-x-6">
                     <a href="#" class="text-gray-400 hover:text-white transition" style="letter-spacing: 0.02em;">Confidentialité</a>
                     <a href="#" class="text-gray-400 hover:text-white transition" style="letter-spacing: 0.02em;">Conditions</a>
                     <a href="#" class="text-gray-400 hover:text-white transition" style="letter-spacing: 0.02em;">Contact</a>
-                </div>
+                </div> -->
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 text-center">
                 <p class="text-gray-500 text-sm" style="letter-spacing: 0.01em;">
-                    &copy; 2025 Cyborg Dev. Tous droits réservés.
+                    &copy; 2025 Fondation.io Tous droits réservés.
                 </p>
             </div>
         </div>

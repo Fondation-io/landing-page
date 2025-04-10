@@ -564,26 +564,13 @@
             </div>
             
             <!-- ALTERNATING SECTIONS LAYOUT -->
-            
-            <style>
-                .challenge-card {
-                    min-height: 180px;
-                    display: flex;
-                }
-                @media (max-width: 768px) {
-                    .challenge-card {
-                        min-height: auto;
-                    }
-                }
-            </style>
-            
             <div class="alternating-layout space-y-12 flex flex-col items-center">
                 <!-- Section 1 - Left aligned -->
-                <div class="flex flex-col md:flex-row md:items-center items-start mb-16 card-challenge w-full md:w-3/4 self-start ml-0 mr-auto challenge-card">
+                <div class="flex flex-col md:flex-row md:items-center items-start mb-16 card-challenge w-full md:w-3/4 self-start ml-0 mr-auto md:min-h-[180px] min-h-auto">
                     <!-- Left side: Icon -->
                     <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center items-center">
                         <div class="h-28 w-28 flex items-center justify-center">
-                            <img src="hourglass.png" alt="Hourglass Icon" class="h-24 w-24 object-contain" style="filter: drop-shadow(0 0 5px var(--accent-blue));">
+                            <img src="hourglass.png" alt="Hourglass Icon" class="h-24 w-24 object-contain">
                         </div>
                     </div>
                     
@@ -596,7 +583,7 @@
                 </div>
                 
                 <!-- Section 2 (Reversed) - Right aligned -->
-                <div class="flex flex-col md:flex-row-reverse md:items-center items-start mb-16 card-challenge w-full md:w-3/4 self-end ml-auto mr-0 challenge-card">
+                <div class="flex flex-col md:flex-row-reverse md:items-center items-start mb-16 card-challenge w-full md:w-3/4 self-end ml-auto mr-0 md:min-h-[180px] min-h-auto">
                     <!-- Right side: Icon -->
                     <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center items-center">
                         <div class="h-28 w-28 flex items-center justify-center">
@@ -614,7 +601,7 @@
                 </div>
                 
                 <!-- Section 3 - Left aligned -->
-                <div class="flex flex-col md:flex-row md:items-center items-start mb-16 card-challenge w-full md:w-3/4 self-start ml-0 mr-auto challenge-card">
+                <div class="flex flex-col md:flex-row md:items-center items-start mb-16 card-challenge w-full md:w-3/4 self-start ml-0 mr-auto md:min-h-[180px] min-h-auto">
                     <!-- Left side: Icon -->
                     <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center items-center">
                         <div class="h-28 w-28 flex items-center justify-center">

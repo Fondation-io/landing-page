@@ -131,10 +131,77 @@
         /* Custom hover effects for cards */
         .card-challenge {
             /* Base styles for challenge cards */
+            background-color: rgba(8, 8, 8, 0.5);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(38, 122, 210, 0.1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        /* Permanent bottom-right corner glow effect */
+        .card-challenge::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                circle at bottom right,
+                rgba(38, 122, 210, 0.8) 0%,
+                rgba(38, 122, 210, 0.4) 20%,
+                rgba(38, 122, 210, 0.2) 40%,
+                rgba(38, 122, 210, 0.1) 60%,
+                transparent 80%
+            );
+            opacity: 0.8;
+            z-index: 0;
+            pointer-events: none; /* Ensures the glow doesn't interfere with interactions */
+        }
+        
+        .card-challenge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(38, 122, 210, 0.05) 0%, transparent 70%);
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+        
+        .card-challenge > * {
+            position: relative;
+            z-index: 1;
         }
         
         .card-challenge:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(38, 122, 210, 0.25);
+            border-color: rgba(38, 122, 210, 0.5);
+            background-color: rgba(12, 12, 12, 0.8);
             transition: all 0.3s ease;
+        }
+        
+        .card-challenge:hover::after {
+            opacity: 1; /* Increase the glow opacity on hover for more intensity */
+            background: radial-gradient(
+                circle at bottom right,
+                rgba(38, 122, 210, 0.9) 0%,
+                rgba(38, 122, 210, 0.5) 20%,
+                rgba(38, 122, 210, 0.3) 40%,
+                rgba(38, 122, 210, 0.1) 60%,
+                transparent 80%
+            );
+        }
+        
+        .card-challenge:hover::before {
+            opacity: 0.8;
         }
         
         .card-testimonial {
@@ -310,12 +377,19 @@
             width: 4px;
             background: linear-gradient(to bottom, rgba(38, 122, 210, 0.3), rgba(38, 122, 210, 0.8));
             border-radius: 2px;
+            box-shadow: 0 0 8px rgba(38, 122, 210, 0.2);
+            transition: all 0.3s ease;
         }
         
         .challenge-vertical-trait-reverse {
             left: auto;
             right: 0;
             background: linear-gradient(to bottom, rgba(38, 122, 210, 0.8), rgba(38, 122, 210, 0.3));
+        }
+        
+        .card-challenge:hover .challenge-vertical-trait {
+            width: 6px;
+            box-shadow: 0 0 12px rgba(38, 122, 210, 0.4);
         }
         
         /* Responsive adjustments for vertical trait */
@@ -329,6 +403,13 @@
                 left: 0;
                 right: auto;
                 background: linear-gradient(to bottom, rgba(38, 122, 210, 0.3), rgba(38, 122, 210, 0.8));
+            }
+            
+            /* Make cards full width on mobile */
+            .alternating-layout .card-challenge {
+                width: 100% !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
             }
         }
     </style>
@@ -504,60 +585,55 @@
             
             <!-- ALTERNATING SECTIONS LAYOUT -->
             
-            <div class="alternating-layout">
-                <!-- Section 1 -->
-                <div class="flex flex-col md:flex-row items-start mb-16">
-                    <!-- Left side: Icon -->
-                    <div class="md:w-1/4 mb-6 md:mb-0 flex justify-center items-center">
-                        <img src="hourglass.png" alt="Hourglass Icon" class="h-16 w-16 object-contain" style="filter: drop-shadow(0 0 3px var(--accent-blue));">
+            <div class="alternating-layout space-y-12 flex flex-col items-center">
+                <!-- Section 1 - Left aligned -->
+                <div class="flex flex-col md:flex-row items-start mb-16 card-challenge w-full md:w-3/4 self-start ml-0 mr-auto transform transition-all duration-500 hover:scale-105">
+                    <!-- Left side: Icon - Increased width from 1/4 to 2/5 -->
+                    <div class="md:w-2/5 mb-6 md:mb-0 flex justify-center items-center">
+                        <div class="h-32 w-32 flex items-center justify-center">
+                            <img src="hourglass.png" alt="Hourglass Icon" class="h-28 w-28 object-contain" style="filter: drop-shadow(0 0 5px var(--accent-blue));">
+                        </div>
                     </div>
                     
-                    <!-- Right side: Content with vertical trait -->
-                    <div class="md:w-3/4 pl-0 md:pl-6 challenge-content relative">
-                        <div class="challenge-vertical-trait"></div>
-                        <h3 class="text-xl font-semibold mb-4">Obsolescence des Compétences</h3>
-                        <p class="text-gray-300 mb-5">
+                    <!-- Right side: Content with vertical trait - Decreased width from 3/4 to 3/5 -->
+                    <div class="md:w-3/5 pl-0 md:pl-6 challenge-content relative">
+                        <!-- <div class="challenge-vertical-trait"></div> -->
+                        <!-- <h3 class="text-xl font-semibold mb-4">Obsolescence des Compétences</h3> -->
+                        <p class="text-xl text-gray-300 mb-5">
                             Les compétences qui étaient essentielles il y a à peine quelques années deviennent rapidement obsolètes face à l'IA générative.
                         </p>
-                        <!-- <div class="pt-4 mt-4 border-t border-gray-700">
-                            <p class="font-semibold" style="color: var(--accent-blue);">
-                                65% des compétences techniques actuelles seront transformées dans les 3 prochaines années.
-                            </p>
-                        </div> -->
                     </div>
                 </div>
                 
-                <!-- Section 2 (Reversed) -->
-                <div class="flex flex-col md:flex-row-reverse items-start mb-16">
+                <!-- Section 2 (Reversed) - Right aligned -->
+                <div class="flex flex-col md:flex-row-reverse items-start mb-16 card-challenge w-full md:w-3/4 self-end ml-auto mr-0 transform transition-all duration-500 hover:scale-105">
                     <!-- Right side: Icon -->
                     <div class="md:w-1/4 mb-6 md:mb-0 flex justify-center items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-blue); filter: drop-shadow(0 0 3px var(--accent-blue));">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                        <div class="h-24 w-24 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-blue); filter: drop-shadow(0 0 5px var(--accent-blue));">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
                     </div>
                     <!-- Left side: Content with vertical trait -->
                     <div class="md:w-3/4 pr-0 md:pr-6 challenge-content challenge-content-reverse relative">
                         <div class="challenge-vertical-trait challenge-vertical-trait-reverse"></div>
-                            <h3 class="text-xl font-semibold mb-4">Compétition Accrue</h3>
-                            <p class="text-gray-300 mb-5">
-                                L'IA démocratise la création de code, permettant à davantage de personnes d'entrer dans le domaine du développement sans formation traditionnelle.
-                            </p>
-                            <!-- <div class="pt-4 mt-4 border-t border-gray-700">
-                                <p class="font-semibold" style="color: var(--accent-blue);">
-                                    Augmentation de 300% du nombre de développeurs "assistés par IA" depuis 2023.
-                                </p>
-                            </div> -->
-                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Compétition Accrue</h3>
+                        <p class="text-gray-300 mb-5">
+                            L'IA démocratise la création de code, permettant à davantage de personnes d'entrer dans le domaine du développement sans formation traditionnelle.
+                        </p>
                     </div>
                 </div>
                 
-                <!-- Section 3 -->
-                <div class="flex flex-col md:flex-row items-start">
+                <!-- Section 3 - Left aligned -->
+                <div class="flex flex-col md:flex-row items-start card-challenge w-full md:w-3/4 self-start ml-0 mr-auto transform transition-all duration-500 hover:scale-105">
                     <!-- Left side: Icon -->
                     <div class="md:w-1/4 mb-6 md:mb-0 flex justify-center items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-blue); filter: drop-shadow(0 0 3px var(--accent-blue));">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
+                        <div class="h-24 w-24 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-blue); filter: drop-shadow(0 0 5px var(--accent-blue));">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
                     </div>
                     
                     <!-- Right side: Content with vertical trait -->
@@ -567,11 +643,6 @@
                         <p class="text-gray-300 mb-5">
                             Les frontières entre le développeur et l'IA deviennent floues, soulevant des questions sur l'identité professionnelle et la valeur ajoutée humaine.
                         </p>
-                        <!-- <div class="pt-4 mt-4 border-t border-gray-700">
-                            <p class="font-semibold" style="color: var(--accent-blue);">
-                                72% des développeurs s'inquiètent de la redéfinition de leur rôle dans les 5 prochaines années.
-                            </p>
-                        </div> -->
                     </div>
                 </div>
             </div>

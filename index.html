@@ -101,16 +101,6 @@
             transition: box-shadow 0.3s ease;
         }
         
-        /* Tech patterns background - more subtle */
-        .tech-pattern {
-            background-image:
-                radial-gradient(rgba(26, 251, 111, 0.03) 1px, transparent 1px),
-                radial-gradient(rgba(158, 87, 179, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px;
-            background-position: 0 0, 15px 15px;
-            background-color: var(--bg-primary);
-        }
-        
         /* Custom animations */
         @keyframes fadeUp {
             from {
@@ -174,125 +164,6 @@
             animation: pulse 2s infinite;
         }
         
-        /* Circuit animation styles */
-        .circuit-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none; /* Allow clicks to pass through */
-            overflow: hidden;
-        }
-        
-        .circuit-svg {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-        }
-        
-        /* Section-specific positioning */
-        .hero-circuits {
-            height: 100vh; /* Full height for hero section */
-        }
-        
-        .defis-circuits {
-            height: 100%;
-        }
-        
-        .temoignages-circuits {
-            height: 100%;
-        }
-        
-        .vision-circuits {
-            height: 100%;
-        }
-        
-        /* Circuit line base styling */
-        .circuit-line {
-            stroke-width: 1px;
-            fill: none;
-            stroke-dasharray: 5, 15; /* Create dashed line effect */
-            opacity: 0.2; /* Slightly increased base opacity for better visibility */
-            filter: drop-shadow(0 0 2px currentColor); /* Enhanced subtle glow */
-        }
-        
-        /* Color variations - using the current brand colors but with reduced opacity */
-        .circuit-orange-red {
-            stroke: rgba(255, 73, 49, 0.8);
-        }
-        
-        .circuit-purple {
-            stroke: rgba(158, 87, 179, 0.8);
-        }
-        
-        .circuit-green {
-            stroke: rgba(26, 251, 111, 0.8);
-        }
-        
-        .circuit-blue {
-            stroke: rgba(38, 122, 210, 0.8);
-        }
-        
-        /* Flow animation for circuit lines */
-        @keyframes flowAnimation {
-            0% {
-                stroke-dashoffset: 100;
-                opacity: 0.2;
-            }
-            50% {
-                opacity: 0.5; /* Slightly increased peak brightness */
-            }
-            100% {
-                stroke-dashoffset: 0;
-                opacity: 0.2;
-            }
-        }
-        
-        /* Apply animation to all circuit lines */
-        .circuit-line {
-            animation: flowAnimation 20s linear infinite; /* Slower animation for more subtle effect */
-        }
-        
-        /* Create staggered animation effect with different delay classes */
-        .delay-1 {
-            animation-delay: -3s;
-            animation-duration: 18s; /* Slightly faster */
-        }
-        
-        .delay-2 {
-            animation-delay: -7s;
-            animation-duration: 22s; /* Slightly slower */
-        }
-        
-        .delay-3 {
-            animation-delay: -12s;
-            animation-duration: 25s; /* Even slower */
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            /* Simplified circuit paths for mobile */
-            .circuit-line.mobile-hidden {
-                display: none;
-            }
-            
-            /* Reduce animation complexity on mobile */
-            .circuit-line {
-                animation-duration: 25s; /* Slower animation to reduce GPU load */
-            }
-        }
-        
-        /* Animation reduction for users who prefer reduced motion */
-        @media (prefers-reduced-motion: reduce) {
-            .circuit-line {
-                animation: none;
-                opacity: 0.2;
-            }
-        }
         
         /* Alternating Layout Styles */
         .alternating-layout > div {
@@ -308,32 +179,6 @@
         .challenge-content-reverse {
             padding-left: 0;
             padding-right: 20px;
-        }
-        
-        .challenge-vertical-trait {
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(to bottom, rgba(38, 122, 210, 0.3), rgba(38, 122, 210, 0.8));
-            border-radius: 4px; /* Increased for more pronounced rounded corners */
-            box-shadow: 0 0 8px rgba(38, 122, 210, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .challenge-vertical-trait-reverse {
-            left: auto;
-            right: 0;
-            background: linear-gradient(to bottom, rgba(38, 122, 210, 0.8), rgba(38, 122, 210, 0.3));
-            border-radius: 4px; /* Ensuring consistent rounded corners */
-        }
-        
-        .card-challenge:hover .challenge-vertical-trait,
-        .card-challenge:hover .challenge-vertical-trait-reverse {
-            width: 6px;
-            box-shadow: 0 0 12px rgba(38, 122, 210, 0.4);
-            border-radius: 6px; /* Increased border-radius on hover to match width */
         }
         
         /* Responsive adjustments for vertical trait */
@@ -360,115 +205,6 @@
 </head>
 
 <body class="min-h-screen">
-    <!-- Circuit Animations Container -->
-    <div class="circuit-container">
-        <!-- Hero Section Circuits (Orange-Red) -->
-        <svg class="circuit-svg hero-circuits" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
-            <!-- Left side circuits connecting to hero content -->
-            <path
-                class="circuit-line circuit-orange-red delay-1"
-                d="M120,150 L220,150 L220,250 L350,250"
-            />
-            
-            <!-- Right side circuits connecting to form -->
-            <path
-                class="circuit-line circuit-orange-red delay-2"
-                d="M850,180 L950,180 L950,300 L1050,300"
-            />
-            
-            <!-- Bottom circuits connecting sections -->
-            <path
-                class="circuit-line circuit-orange-red delay-3"
-                d="M400,650 L400,700 L600,700 L600,750"
-            />
-            
-            <!-- Central circuits connecting hero sections -->
-            <path
-                class="circuit-line circuit-orange-red delay-1"
-                d="M600,200 L600,300 L700,300 L700,350"
-            />
-            
-            <!-- Diagonal accent circuit -->
-            <path
-                class="circuit-line circuit-orange-red delay-2"
-                d="M300,400 L450,400 L500,450 L650,450"
-            />
-        </svg>
-        
-        <!-- Défis Section Circuits (Blue) -->
-        <svg class="circuit-svg defis-circuits" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
-            <path
-                class="circuit-line circuit-blue delay-1"
-                d="M200,100 L200,200 L400,200"
-            />
-            
-            <path
-                class="circuit-line circuit-blue delay-2"
-                d="M600,150 L800,150 L800,300"
-            />
-            
-            <path
-                class="circuit-line circuit-blue delay-3"
-                d="M300,400 L300,500 L500,500 L500,600"
-            />
-            
-            <path
-                class="circuit-line circuit-blue delay-1 mobile-hidden"
-                d="M900,250 L1000,250 L1000,400 L1100,400"
-            />
-        </svg>
-        
-        <!-- Témoignages Section Circuits (Purple) -->
-        <svg class="circuit-svg temoignages-circuits" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
-            <path
-                class="circuit-line circuit-purple delay-2"
-                d="M150,100 L150,300 L300,300"
-            />
-            
-            <path
-                class="circuit-line circuit-purple delay-1"
-                d="M500,200 L700,200 L700,400"
-            />
-            
-            <path
-                class="circuit-line circuit-purple delay-3"
-                d="M900,150 L900,350 L750,350"
-            />
-            
-            <path
-                class="circuit-line circuit-purple delay-2 mobile-hidden"
-                d="M400,500 L600,500 L600,600 L800,600"
-            />
-        </svg>
-        
-        <!-- Vision Section Circuits (Green) -->
-        <svg class="circuit-svg vision-circuits" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
-            <path
-                class="circuit-line circuit-green delay-3"
-                d="M200,100 L200,250 L350,250"
-            />
-            
-            <path
-                class="circuit-line circuit-green delay-1"
-                d="M500,150 L650,150 L650,300 L800,300"
-            />
-            
-            <path
-                class="circuit-line circuit-green delay-2"
-                d="M850,200 L950,200 L950,400"
-            />
-            
-            <path
-                class="circuit-line circuit-green delay-3 mobile-hidden"
-                d="M300,450 L300,550 L500,550 L500,650"
-            />
-            
-            <path
-                class="circuit-line circuit-green delay-1"
-                d="M700,500 L900,500 L900,600 L1050,600"
-            />
-        </svg>
-    </div>
     <!-- Header -->
     <header class="fixed w-full bg-opacity-95 bg-black z-50 backdrop-filter backdrop-blur-sm">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -482,7 +218,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center tech-pattern">
+    <section class="relative min-h-screen flex items-center">
         <div class="absolute inset-0 hero-gradient"></div>
         <div class="container mx-auto px-4 py-20 relative z-10">
             <div class="flex flex-col md:flex-row items-center">
@@ -586,7 +322,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="temoignages" class="py-20 tech-pattern" style="background-color: var(--bg-primary);">
+    <section id="temoignages" class="py-20" style="background-color: var(--bg-primary);">
         <div class="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-orange-red);">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -820,48 +556,6 @@
                 });
             });
         });
-        
-        // JavaScript to dynamically adjust circuit positions
-        function updateCircuitPositions() {
-            const sections = [
-                { selector: '.hero-circuits', sectionId: null }, // Hero section
-                { selector: '.defis-circuits', sectionId: 'defis' },
-                { selector: '.temoignages-circuits', sectionId: 'temoignages' },
-                { selector: '.vision-circuits', sectionId: 'vision' }
-            ];
-            
-            sections.forEach(({selector, sectionId}) => {
-                const circuitSvg = document.querySelector(selector);
-                if (!circuitSvg) return;
-                
-                let section;
-                if (sectionId) {
-                    section = document.getElementById(sectionId);
-                } else {
-                    // For hero section which doesn't have an ID
-                    section = document.querySelector('section.tech-pattern');
-                }
-                
-                if (section && circuitSvg) {
-                    const rect = section.getBoundingClientRect();
-                    
-                    // Position the SVG to match the section
-                    circuitSvg.style.top = `${section.offsetTop}px`;
-                    circuitSvg.style.height = `${rect.height}px`;
-                    
-                    // Make sure the SVG is behind the content but visible
-                    circuitSvg.style.zIndex = "1";
-                }
-            });
-        }
-        
-        // Update on load, resize, and periodically to ensure proper positioning
-        window.addEventListener('load', updateCircuitPositions);
-        window.addEventListener('resize', updateCircuitPositions);
-        
-        // Call updateCircuitPositions periodically to ensure proper positioning
-        // This helps with dynamic content and ensures circuits stay aligned
-        setInterval(updateCircuitPositions, 2000);
     </script>
 </body>
 </html>

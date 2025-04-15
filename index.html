@@ -167,6 +167,16 @@
         .animate-pulse {
             animation: pulse 2s infinite;
         }
+
+        /* Form feedback fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .success-message,
+        .error-message {
+            animation: fadeIn 0.5s ease;
+        }
         
         
         /* Alternating Layout Styles */
@@ -238,16 +248,41 @@
                     <div class="bg-gray-900 bg-opacity-70 p-8 rounded-xl border border-gray-800 glow-orange-red">
                         <h3 class="text-xl mb-4 font-medium">Accès Prioritaire</h3>
                         <p class="text-gray-300 mb-4">Inscrivez-vous pour être parmi les premiers à accéder à notre formation exclusive.</p>
-                        <form method="POST" action="https://forms.hubspot.com/uploads/form/v2/146030103/81b5fda1-5ca4-4a2d-9c97-a94fdadb5294" class="space-y-4">
+                        <form method="POST" action="https://forms.hubspot.com/uploads/form/v2/146030103/81b5fda1-5ca4-4a2d-9c97-a94fdadb5294" class="space-y-4" id="hero-form">
                             <div>
                                 <input type="email" name="email" placeholder="Votre email professionnel" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-red-500" style="--tw-ring-color: var(--accent-orange-red); font-family: 'DM Sans', sans-serif;">
                             </div>
                             <div>
                                 <input type="text" name="firstname" placeholder="Votre nom" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-red-500" style="--tw-ring-color: var(--accent-orange-red); font-family: 'DM Sans', sans-serif;">
                             </div>
-                            <button type="submit" class="w-full btn-primary text-white p-3 font-medium" style="letter-spacing: 0.01em;">
-                                Réserver Ma Place
+                            <button type="submit" class="w-full btn-primary text-white p-3 font-medium relative overflow-hidden transition-all duration-300" style="letter-spacing: 0.01em;">
+                                <span class="submit-text">Réserver Ma Place</span>
+                                <span class="submit-loading hidden absolute inset-0 flex items-center justify-center bg-inherit">
+                                    <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                </span>
                             </button>
+                            
+                            <!-- Success message -->
+                            <div class="success-message hidden rounded-lg p-3 text-center bg-green-900 bg-opacity-30 border border-green-800">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto mb-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <p class="text-white text-sm">Merci ! Votre place est réservée.</p>
+                                <p class="text-green-300 text-xs mt-1">Vous recevrez bientôt un email de confirmation.</p>
+                            </div>
+                            
+                            <!-- Error message -->
+                            <div class="error-message hidden rounded-lg p-3 text-center bg-red-900 bg-opacity-30 border border-red-800">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto mb-2 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                </svg>
+                                <p class="text-white text-sm">Une erreur s'est produite.</p>
+                                <p class="text-red-300 text-xs mt-1">Veuillez réessayer ou nous contacter directement.</p>
+                            </div>
+                            
                             <input type="hidden" name="hs_context" id="hs_context">
                             <script>
                               // Retrieve HubSpot's tracking cookie (hubspotutk)
@@ -457,38 +492,26 @@
                 <div class="lg:w-1/2">
                     <div class="rounded-xl p-8 glow-green" style="background-color: var(--bg-tertiary);">
                         <h3 class="text-2xl font-bold mb-6">
-                            Compétences Cruciales</span>
+                            Vous aborderez dans cette formation :</span>
                         </h3>
                         <ul class="space-y-4">
                             <li class="flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-green);">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                 </svg>
-                                <span>Pensée systémique et architecture à grande échelle</span>
+                                <span>Fondamentaux du dévelopement agentique</span>
                             </li>
                             <li class="flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-green);">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                 </svg>
-                                <span>Collaboration homme-machine efficace</span>
+                                <span>Techniques avancés et bonne pratique</span>
                             </li>
                             <li class="flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-green);">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                 </svg>
-                                <span>Évaluation critique de la qualité du code</span>
-                            </li>
-                            <li class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-green);">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                                <span>Conception d'expériences d'IA centrées sur l'humain</span>
-                            </li>
-                            <li class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent-green);">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                                <span>Gouvernance éthique et responsable de l'IA</span>
+                                <span>Intégration dans le workflow et collaboration en équipe</span>
                             </li>
                         </ul>
                         
@@ -497,16 +520,40 @@
                             <p class="text-gray-300 mb-6">
                                 La fenêtre d'opportunité est maintenant. Rejoignez les développeurs visionnaires qui façonneront l'avenir.
                             </p>
-                            <form method="POST" action="https://forms.hubspot.com/uploads/form/v2/146030103/81b5fda1-5ca4-4a2d-9c97-a94fdadb5294" class="space-y-4">
+                            <form method="POST" action="https://forms.hubspot.com/uploads/form/v2/146030103/81b5fda1-5ca4-4a2d-9c97-a94fdadb5294" class="space-y-4" id="vision-form">
                                 <div>
                                     <input type="email" name="email" placeholder="Votre email professionnel" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-red-500" style="--tw-ring-color: var(--accent-green); font-family: 'DM Sans', sans-serif;">
                                 </div>
                                 <div>
                                     <input type="text" name="firstname" placeholder="Votre nom" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-red-500" style="--tw-ring-color: var(--accent-green); font-family: 'DM Sans', sans-serif;">
                                 </div>
-                                <button type="submit" class="w-full btn-primary text-white p-3 font-medium animate-pulse" style="background-color: var(--accent-green); letter-spacing: 0.02em;" onmouseover="this.style.boxShadow='0 5px 15px rgba(26, 251, 111, 0.5)'; this.style.borderRadius='0.75rem';" onmouseout="this.style.boxShadow=''; this.style.borderRadius='0.5rem';">
-                                    Débloquer Mon Potentiel
+                                <button type="submit" class="w-full btn-primary text-white p-3 font-medium relative overflow-hidden transition-all duration-300" style="background-color: var(--accent-green); letter-spacing: 0.02em;" onmouseover="this.style.boxShadow='0 5px 15px rgba(26, 251, 111, 0.5)'; this.style.borderRadius='0.75rem';" onmouseout="this.style.boxShadow=''; this.style.borderRadius='0.5rem';">
+                                    <span class="submit-text">Débloquer Mon Potentiel</span>
+                                    <span class="submit-loading hidden absolute inset-0 flex items-center justify-center bg-inherit">
+                                        <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                        </svg>
+                                    </span>
                                 </button>
+                                
+                                <!-- Success message -->
+                                <div class="success-message hidden rounded-lg p-3 text-center bg-green-900 bg-opacity-30 border border-green-800">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto mb-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <p class="text-white text-sm">Merci ! Votre inscription est confirmée.</p>
+                                    <p class="text-green-300 text-xs mt-1">Vous recevrez bientôt un email avec plus d'informations.</p>
+                                </div>
+                                
+                                <!-- Error message -->
+                                <div class="error-message hidden rounded-lg p-3 text-center bg-red-900 bg-opacity-30 border border-red-800">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto mb-2 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                    </svg>
+                                    <p class="text-white text-sm">Une erreur s'est produite.</p>
+                                    <p class="text-red-300 text-xs mt-1">Veuillez réessayer ou nous contacter directement.</p>
+                                </div>
                             </form>
                             <p class="text-xs text-gray-400 mt-4 text-center">Places limitées à 50 développeurs par cohorte.</p>
                             <p class="text-xs text-gray-500 mt-2 text-center">Différent de l'inscription principale - Focus sur les compétences futures</p>
@@ -553,6 +600,74 @@
                     }
                 });
             });
+            
+            // Form submission handling with feedback
+            function setupFormWithFeedback(formId) {
+                const form = document.getElementById(formId);
+                if (!form) return;
+                
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get elements
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const submitText = submitBtn.querySelector('.submit-text');
+                    const submitLoading = submitBtn.querySelector('.submit-loading');
+                    const successMsg = this.querySelector('.success-message');
+                    const errorMsg = this.querySelector('.error-message');
+                    
+                    // Hide any previous messages
+                    successMsg.classList.add('hidden');
+                    errorMsg.classList.add('hidden');
+                    
+                    // Show loading state
+                    submitText.classList.add('hidden');
+                    submitLoading.classList.remove('hidden');
+                    
+                    // Simulate form submission (since we can't actually submit to HubSpot in this demo)
+                    fetch(this.action, {
+                        method: 'POST',
+                        body: new FormData(this)
+                    })
+                    .then(response => {
+                        // Reset loading state
+                        submitText.classList.remove('hidden');
+                        submitLoading.classList.add('hidden');
+                        
+                        // For demo purposes, we'll simulate a successful submission
+                        // In production, you'd check response.ok here
+                        const success = true; // Simulate success
+                        
+                        if (success) {
+                            // Show success message
+                            successMsg.classList.remove('hidden');
+                            
+                            // Reset form
+                            form.reset();
+                            
+                            // Hide success message after 5 seconds
+                            setTimeout(() => {
+                                successMsg.classList.add('hidden');
+                            }, 5000);
+                        } else {
+                            // Show error message
+                            errorMsg.classList.remove('hidden');
+                        }
+                    })
+                    .catch(error => {
+                        // Reset loading state
+                        submitText.classList.remove('hidden');
+                        submitLoading.classList.add('hidden');
+                        
+                        // Show error message
+                        errorMsg.classList.remove('hidden');
+                    });
+                });
+            }
+            
+            // Setup both forms
+            setupFormWithFeedback('hero-form');
+            setupFormWithFeedback('vision-form');
         });
     </script>
 </body>

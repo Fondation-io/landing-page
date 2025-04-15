@@ -119,7 +119,11 @@
         
         /* Hero overlay */
         .hero-gradient {
-            background: rgba(5, 5, 5, 0.85);
+            background-image: url('hero-bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: grayscale(100%) opacity(0.15);
         }
         
         /* Custom hover effects for cards */
@@ -218,7 +222,8 @@
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center">
-        <div class="absolute inset-0 hero-gradient"></div>
+            <div class="absolute inset-0 hero-gradient"></div>
+            <div class="absolute inset-0 bg-black bg-opacity-60"></div>
         <div class="container mx-auto px-4 py-20 relative z-10">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-12 md:mb-0 animate-fade-up" style="animation-delay: 0.2s">
